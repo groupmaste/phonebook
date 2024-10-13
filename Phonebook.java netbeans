@@ -13,22 +13,22 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Phonebook {
-    // ArrayList to hold contacts (using HashMap for each contact's details)
+    // ArrayList to hold contacts 
     private final ArrayList<HashMap<String, String>> contacts;
 
     public Phonebook() {
         contacts = new ArrayList<>();
     }
 
-    // 1. Insert Contact
-    public void insertContact(String name, String phone) {
+
+    public void insertContact) {
         HashMap<String, String> contact = new HashMap<>();
         contact.put("name", name);
         contact.put("phone", phone);
         contacts.add(contact);
     }
 
-    // 2. Search Contact
+    
     public HashMap<String, String> searchContact(String name) {
         for (HashMap<String, String> contact : contacts) {
             if (contact.get("name").equalsIgnoreCase(name)) {
@@ -38,7 +38,7 @@ public class Phonebook {
         return null;
     }
 
-    // 3. Display All Contacts
+    
     public void displayAllContacts() {
         if (contacts.isEmpty()) {
             System.out.println("No contacts available.");
@@ -49,7 +49,7 @@ public class Phonebook {
         }
     }
 
-    // 4. Delete Contact
+    
     public boolean deleteContact(String name) {
         for (int i = 0; i < contacts.size(); i++) {
             if (contacts.get(i).get("name").equalsIgnoreCase(name)) {
@@ -60,7 +60,7 @@ public class Phonebook {
         return false;
     }
 
-    // 5. Update Contact
+  
     public boolean updateContact(String name, String newName, String newPhone) {
         for (HashMap<String, String> contact : contacts) {
             if (contact.get("name").equalsIgnoreCase(name)) {
@@ -72,7 +72,7 @@ public class Phonebook {
         return false;
     }
 
-    // 6. Sort Contacts (Bubble Sort by Name)
+   
     public void sortContacts() {
         int n = contacts.size();
         for (int i = 0; i < n - 1; i++) {
@@ -89,15 +89,6 @@ public class Phonebook {
         }
     }
 
-    // 7. Analyze the Efficiency of the Search Algorithm
-    // This method provides information about the search algorithm's efficiency
-    public void analyzeSearchEfficiency() {
-        System.out.println("The search algorithm used is linear search.");
-        System.out.println("Time Complexity: O(n) in the worst case, where n is the number of contacts.");
-        System.out.println("Best Case: O(1) if the contact is the first element in the list.");
-    }
-
-    // Main method to interact with the Phonebook
     public static void main(String[] args) {
         Phonebook phonebook = new Phonebook();
         Scanner scanner = new Scanner(System.in);
@@ -114,7 +105,7 @@ public class Phonebook {
             System.out.println("8. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
